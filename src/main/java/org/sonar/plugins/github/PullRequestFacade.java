@@ -235,6 +235,8 @@ public class PullRequestFacade {
   }
 
   public void deleteOutdatedComments() {
+    if(config.isDeletionOfOldCommentsDisabled()) return;
+
     for (GHPullRequestReviewComment reviewToDelete : reviewCommentToBeDeletedById.values()) {
       try {
         reviewToDelete.delete();

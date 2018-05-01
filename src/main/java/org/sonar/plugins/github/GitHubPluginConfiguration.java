@@ -181,4 +181,8 @@ public class GitHubPluginConfiguration {
     }
   }
 
+  public boolean isDeletionOfOldCommentsDisabled() {
+    return settings.hasKey(GitHubPlugin.GITHUB_DISABLE_DELETION_OF_OLD_COMMENTS) && settings.getBoolean(GitHubPlugin.GITHUB_DISABLE_DELETION_OF_OLD_COMMENTS);
+  }
+
 }
